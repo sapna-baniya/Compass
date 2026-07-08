@@ -1,0 +1,112 @@
+[
+  {
+    "id": "r001",
+    "name": "National Human Trafficking Hotline",
+    "category": "emergency",
+    "jurisdiction": "US-national",
+    "need_type": ["immediate_safety", "reporting", "referral"],
+    "description": "24/7 confidential hotline for trafficking survivors and concerned individuals. Provides crisis intervention, safety planning, and referrals to local services in over 200 languages.",
+    "contact": "1-888-373-7888 (call/text 233733)",
+    "url": "https://humantraffickinghotline.org",
+    "urgency": "critical"
+  },
+  {
+    "id": "r002",
+    "name": "Polaris Project Resource Directory",
+    "category": "referral_network",
+    "jurisdiction": "US-national",
+    "need_type": ["shelter", "legal", "medical", "referral"],
+    "description": "National anti-trafficking organization maintaining a directory of vetted local service providers including shelters, legal aid, and medical care.",
+    "contact": "N/A - directory service",
+    "url": "https://polarisproject.org/resources",
+    "urgency": "high"
+  },
+  {
+    "id": "r003",
+    "name": "T Visa Legal Assistance Network",
+    "category": "legal",
+    "jurisdiction": "US-national",
+    "need_type": ["immigration", "legal"],
+    "description": "Nonprofit legal aid organizations specializing in T-visa applications for trafficking survivors, providing free or low-cost representation.",
+    "contact": "Varies by local affiliate",
+    "url": "https://www.acf.hhs.gov/otip/t-nonimmigrant-status",
+    "urgency": "medium"
+  },
+  {
+    "id": "r004",
+    "name": "U Visa Legal Assistance Network",
+    "category": "legal",
+    "jurisdiction": "US-national",
+    "need_type": ["immigration", "legal"],
+    "description": "Legal aid network for survivors of qualifying crimes (including trafficking) seeking U nonimmigrant status, offering case evaluation and representation.",
+    "contact": "Varies by local affiliate",
+    "url": "https://www.uscis.gov/humanitarian/victims-human-trafficking-other-crimes/victims-of-criminal-activity-u-nonimmigrant-status",
+    "urgency": "medium"
+  },
+  {
+    "id": "r005",
+    "name": "HHS Office on Trafficking in Persons (OTIP)",
+    "category": "government",
+    "jurisdiction": "US-national",
+    "need_type": ["benefits", "referral", "case_management"],
+    "description": "Federal office coordinating anti-trafficking response, including the Certification process that allows survivors to access federal benefits regardless of immigration status.",
+    "contact": "1-888-373-7888 to request Certification support",
+    "url": "https://www.acf.hhs.gov/otip",
+    "urgency": "high"
+  },
+  {
+    "id": "r006",
+    "name": "National Domestic Violence Hotline",
+    "category": "emergency",
+    "jurisdiction": "US-national",
+    "need_type": ["immediate_safety", "shelter", "counseling"],
+    "description": "24/7 hotline supporting survivors of domestic violence and related exploitation, including safety planning and emergency shelter referrals.",
+    "contact": "1-800-799-7233",
+    "url": "https://www.thehotline.org",
+    "urgency": "critical"
+  },
+  {
+    "id": "r007",
+    "name": "RAINN (Rape, Abuse & Incest National Network)",
+    "category": "medical_counseling",
+    "jurisdiction": "US-national",
+    "need_type": ["medical", "counseling", "immediate_safety"],
+    "description": "Operates the National Sexual Assault Hotline and connects survivors to local medical, counseling, and advocacy resources.",
+    "contact": "1-800-656-4673",
+    "url": "https://www.rainn.org",
+    "urgency": "critical"
+  },
+  {
+    "id": "r008",
+    "name": "Local Trafficking Survivor Shelter Network",
+    "category": "shelter",
+    "jurisdiction": "state-varies",
+    "need_type": ["shelter", "immediate_safety"],
+    "description": "Placeholder entry representing state/regional trafficking-specific shelter networks. In production this would be populated per-jurisdiction from vetted NGO partner data, not scraped.",
+    "contact": "Varies by state",
+    "url": "https://polarisproject.org/resources",
+    "urgency": "critical"
+  },
+  {
+    "id": "r009",
+    "name": "Immigrant Legal Resource Center",
+    "category": "legal",
+    "jurisdiction": "US-national",
+    "need_type": ["immigration", "legal", "know_your_rights"],
+    "description": "Provides know-your-rights materials and legal referrals for immigrants, including trafficking and crime victims navigating immigration status.",
+    "contact": "N/A - resource organization",
+    "url": "https://www.ilrc.org",
+    "urgency": "medium"
+  },
+  {
+    "id": "r010",
+    "name": "Coalition to Abolish Slavery and Trafficking (CAST)",
+    "category": "case_management",
+    "jurisdiction": "CA",
+    "need_type": ["case_management", "shelter", "legal", "counseling"],
+    "description": "California-based comprehensive service provider offering case management, shelter, legal services, and job training for trafficking survivors.",
+    "contact": "1-888-KEY-2-FRE (1-888-539-2373)",
+    "url": "https://www.castla.org",
+    "urgency": "high"
+  }
+]

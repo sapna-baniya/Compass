@@ -1,0 +1,385 @@
+:root {
+  --bg: #EEF2EE;
+  --bg-panel: #FFFFFF;
+  --ink: #16242A;
+  --ink-soft: #52635F;
+  --harbor: #2F5349;
+  --harbor-deep: #1E3830;
+  --harbor-light: #6E9086;
+  --gold: #B98A2E;
+  --gold-soft: #F1E4C4;
+  --critical: #9C4331;
+  --critical-soft: #F3E1DA;
+  --line: #D6DED8;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+button:focus-visible, textarea:focus-visible, a:focus-visible {
+  outline: 2px solid var(--harbor);
+  outline-offset: 2px;
+}
+
+.app-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* ---------- Header ---------- */
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 36px;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--harbor-deep);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.wordmark .mark {
+  font-size: 28px;
+  transform: translateY(-2px);
+  display: inline-block;
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+
+.session-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 6px 14px;
+  white-space: nowrap;
+}
+
+/* ---------- Layout ---------- */
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+}
+
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.panel h2 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--harbor-deep);
+}
+
+.panel .sub {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 0 0 18px;
+}
+
+/* ---------- Intake ---------- */
+
+.intake-textarea {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--bg);
+  resize: vertical;
+}
+
+.intake-note {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.intake-note .dot {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.submit-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.btn-primary {
+  background: var(--harbor-deep);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+
+.btn-primary:hover { background: var(--harbor); }
+.btn-primary:disabled { background: var(--ink-soft); cursor: not-allowed; }
+
+/* ---------- Handoff banner ---------- */
+
+.handoff-banner {
+  background: var(--critical-soft);
+  border: 1px solid var(--critical);
+  border-radius: 12px;
+  padding: 20px 22px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.handoff-banner .icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.handoff-banner h3 {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  color: var(--critical);
+  font-size: 17px;
+}
+
+.handoff-banner p { margin: 0 0 10px; font-size: 14px; }
+
+.handoff-banner .hotline {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--critical);
+}
+
+/* ---------- Resource cards ---------- */
+
+.resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.resource-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.resource-card .top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.resource-card h3 {
+  font-family: var(--font-display);
+  font-size: 17px;
+  margin: 0;
+  color: var(--harbor-deep);
+}
+
+.urgency-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 100px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.urgency-critical { background: var(--critical-soft); color: var(--critical); }
+.urgency-high { background: var(--gold-soft); color: var(--gold); }
+.urgency-medium, .urgency-low { background: #E7ECE8; color: var(--ink-soft); }
+
+.resource-card p.desc {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.resource-card .meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--harbor);
+}
+
+.resource-card .actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.btn-save {
+  background: transparent;
+  border: 1px solid var(--harbor);
+  color: var(--harbor-deep);
+  border-radius: 7px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.btn-save:hover { background: var(--harbor); color: white; }
+.btn-save:disabled {
+  border-color: var(--line);
+  color: var(--ink-soft);
+  background: var(--bg);
+}
+
+/* ---------- Consent ledger (the logbook) ---------- */
+
+.logbook {
+  position: sticky;
+  top: 24px;
+}
+
+.logbook-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.logbook-empty {
+  font-size: 13px;
+  color: var(--ink-soft);
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+}
+
+.logbook-entry {
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--line);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.logbook-entry:last-child { border-bottom: none; }
+
+.logbook-stamp {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: white;
+  background: var(--harbor);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logbook-entry-body { flex: 1; }
+
+.logbook-entry-name {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.logbook-entry-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+
+.logbook-revoke {
+  background: none;
+  border: none;
+  color: var(--critical);
+  font-size: 11px;
+  padding: 0;
+  margin-top: 4px;
+  text-decoration: underline;
+}
+
+.consent-preview-note {
+  background: var(--gold-soft);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 12.5px;
+  color: #5C4515;
+  margin-top: 16px;
+}
+
+.footer-note {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-align: center;
+}
