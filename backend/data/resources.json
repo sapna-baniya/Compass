@@ -108,5 +108,71 @@
     "contact": "1-888-KEY-2-FRE (1-888-539-2373)",
     "url": "https://www.castla.org",
     "urgency": "high"
+  },
+  {
+    "id": "r011",
+    "name": "Safe House Project",
+    "category": "shelter",
+    "jurisdiction": "US-national",
+    "need_type": ["shelter", "immediate_safety", "case_management"],
+    "description": "National nonprofit coordinating a network of certified safe houses across the U.S. offering emergency, transitional, and long-term housing for trafficking survivors, plus placement support to match survivors with appropriate care.",
+    "contact": "See website for survivor referral form",
+    "url": "https://www.safehouseproject.org",
+    "urgency": "critical"
+  },
+  {
+    "id": "r012",
+    "name": "Institute for Survivor Care — National Survivor Care Landscape Map",
+    "category": "referral_network",
+    "jurisdiction": "US-national",
+    "need_type": ["shelter", "case_management", "referral"],
+    "description": "An interactive, actively maintained map of direct-service programs dedicated to survivors of commercial sexual exploitation, searchable by state, useful for finding regional shelter and care options not listed nationally.",
+    "contact": "See website — interactive map with regional program listings",
+    "url": "https://instituteforsurvivorcare.org/shelter-map/",
+    "urgency": "high"
+  },
+  {
+    "id": "r013",
+    "name": "Washington Anti-Trafficking Response Network (WARN)",
+    "category": "case_management",
+    "jurisdiction": "WA",
+    "need_type": ["shelter", "legal", "medical", "case_management"],
+    "description": "A coalition of Washington State organizations providing housing, food, medical, and legal services to trafficking survivors, alongside outreach and training for service providers and law enforcement.",
+    "contact": "See website for regional service provider directory",
+    "url": "https://warn-trafficking.org/service-providers/",
+    "urgency": "high"
+  },
+  {
+    "id": "r014",
+    "name": "Hope Against Trafficking",
+    "category": "shelter",
+    "jurisdiction": "MI",
+    "need_type": ["shelter", "case_management", "counseling", "medical"],
+    "description": "Michigan-based residential program offering adult female trafficking survivors up to two years of rent-free housing alongside healthcare, mental health services, legal assistance, and job training.",
+    "contact": "See website for intake process",
+    "url": "https://www.hopeagainsttrafficking.org",
+    "urgency": "high"
+  },
+  {
+    "id": "r015",
+    "name": "New York State Office of Temporary and Disability Assistance — Human Trafficking Services",
+    "category": "government",
+    "jurisdiction": "NY",
+    "need_type": ["case_management", "shelter", "medical", "legal", "referral"],
+    "description": "New York State program confirming trafficking survivors for referral to case management, shelter/rental assistance, health assessment, mental health counseling, legal services, and food assistance through regional providers.",
+    "contact": "1-888-373-7888 (National Hotline, for NY referral pathway) or text HELP to 233733",
+    "url": "https://otda.ny.gov/programs/bria/trafficking.asp",
+    "urgency": "high"
+  },
+  {
+    "id": "r016",
+    "name": "National Human Trafficking Hotline — Local Services Directory",
+    "category": "referral_network",
+    "jurisdiction": "US-national",
+    "need_type": ["shelter", "legal", "medical", "case_management", "referral"],
+    "description": "A searchable directory of anti-trafficking organizations nationwide offering emergency, transitional, or long-term services, maintained by the operator of the National Human Trafficking Hotline.",
+    "contact": "1-888-373-7888 for direct advocate assistance finding local services",
+    "url": "https://humantraffickinghotline.org/en/find-local-services",
+    "urgency": "high"
   }
 ]
