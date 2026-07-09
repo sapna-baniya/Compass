@@ -8,6 +8,9 @@ Compass helps trafficking survivors and frontline case workers find legal, medic
 immigration, and shelter resources — without storing anything about the user unless
 they explicitly say so.
 
+**Live demo:** [compass-n0vclx0uu-compass12.vercel.app/](https://compass-n0vclx0uu-compass12.vercel.app/)
+**Backend API:** [compass-niz7.onrender.com](https://compass-niz7.onrender.com) 
+
 ## Why this design
 
 Most support tools either over-collect data or make decisions that should stay with a
@@ -27,16 +30,32 @@ human. Compass is built so that:
 
 ## Architecture
 
+![Compass pipeline architecture](backend/data/pipeline.png)
+
 ```
 frontend/  React + Vite app. IntakeForm -> ResourceCard list -> ConsentLedger ("logbook")
 backend/
   main.py           FastAPI routes
   agents.py         LangGraph pipeline: intake -> safety router -> retrieval ->
                      prioritization -> consent preview  (or -> handoff, and stop)
-  rag.py            FAISS + sentence-transformers retrieval over the resource KB
+  rag.py            TF-IDF (scikit-learn) retrieval over the resource KB — chosen over
+                     a neural embedding model to stay within free-tier hosting memory
+                     limits (512MB on Render)
   consent_ledger.py Explicit, auditable consent store (in-memory for the demo)
-  data/resources.json  Seed knowledge base — public hotline/legal-aid/shelter data only
+  data/resources.json  Seed knowledge base — 16 verified public hotline/legal-aid/
+                     shelter resources across CA, WA, MI, NY, and national programs
+  Dockerfile        Backup deployment target (Hugging Face Spaces), used only if
+                     Render capacity becomes an issue
 ```
+
+## Deployment
+
+- **Backend:** Render (free tier), auto-deploys from `main` via `render.yaml`. Env vars
+  (`GROQ_API_KEY`, `GROQ_MODEL`) are set in the Render dashboard, never committed.
+- **Frontend:** Vercel, root directory `frontend`, auto-deploys from `main`. Set
+  `VITE_API_BASE` to the Render backend URL in Vercel's environment variables.
+- **Fallback:** if Render's memory limits become an issue again, `backend/Dockerfile`
+  is ready for Hugging Face Spaces (16GB free tier) as an alternative host.
 
 ## Running locally
 
@@ -64,7 +83,8 @@ npm run dev
 ```
 
 Visit http://localhost:5173. The Vite dev server proxies `/api/*` to the FastAPI
-backend on port 8000.
+backend on port 8000. For local dev against a deployed backend instead, set
+`VITE_API_BASE` in `frontend/.env`.
 
 ## Demo script (for your ≤3 minute video)
 
@@ -79,6 +99,20 @@ backend on port 8000.
 5. Briefly show `agents.py` to narrate the graph: intake → safety router → (retrieval →
    prioritization → consent preview) OR (handoff, full stop).
 
+## Data sourcing & verification
+
+The 16 resources in `data/resources.json` were hand-selected from official sources —
+the National Human Trafficking Hotline, HHS OTIP, USCIS, Polaris Project, the Institute
+for Survivor Care's landscape map, and individual state/regional organizations (CAST in
+CA, WARN in WA, Hope Against Trafficking in MI, NYS OTDA). No data was scraped from
+unverified listings. Where a phone number wasn't publicly published for an organization,
+the entry says "see website" rather than guessing.
+
+This is a demonstration-scale knowledge base, not a production-ready directory. A real
+deployment would need every entry independently re-verified with the organization
+before going live, and broader state-by-state coverage — that verification workflow is
+part of the roadmap, not yet built.
+
 ## Ethics / guideline compliance notes
 
 - No facial recognition, biometric data, or re-identification of any kind — the
@@ -91,4 +125,4 @@ backend on port 8000.
 
 ## Team
 
-Sai (Venkata Sai Kumar Erla) & Nista Sunuwar
+Sapna Baniya & Nista Sunuwar
