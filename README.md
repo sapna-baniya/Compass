@@ -86,18 +86,6 @@ Visit http://localhost:5173. The Vite dev server proxies `/api/*` to the FastAPI
 backend on port 8000. For local dev against a deployed backend instead, set
 `VITE_API_BASE` in `frontend/.env`.
 
-## Demo script (for your ≤3 minute video)
-
-1. Type a situation into the intake box (e.g. "I need help finding a safe place to stay
-   and I'm not sure about my immigration status") → show ranked resources appear.
-2. Click "Save to my logbook" on one resource → show it appear in the logbook sidebar
-   with a visible timestamp and expiry.
-3. Click "Remove" on that entry → show it disappear immediately.
-4. Type something indicating immediate danger (e.g. "he's here right now, I can't
-   leave") → show the Handoff Agent intercept it and display the hotline banner
-   instead of resources.
-5. Briefly show `agents.py` to narrate the graph: intake → safety router → (retrieval →
-   prioritization → consent preview) OR (handoff, full stop).
 
 ## Data sourcing & verification
 
